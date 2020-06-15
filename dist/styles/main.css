@@ -1,0 +1,93 @@
+@charset "UTF-8";
+body * {
+  box-sizing: border-box; }
+
+p {
+  font-size: 16px; }
+
+body * {
+  box-sizing: border-box; }
+
+body p {
+  margin-top: 0; }
+
+body {
+  width: 100%;
+  margin: 0;
+  height: 100vh; }
+  body .main-container {
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+    height: 100%; }
+    body .main-container .products-area {
+      display: flex;
+      flex: 0 0 100%;
+      max-width: 1200px; }
+
+.products-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; }
+  .products-container__day {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    background-color: #fff;
+    position: relative; }
+    .products-container__day:last-child {
+      margin-bottom: 0; }
+    .products-container__day:before {
+      content: '▲';
+      position: absolute;
+      left: 5px; }
+    .products-container__day .product-day-information {
+      width: 100%;
+      display: flex;
+      justify-content: space-between; }
+      .products-container__day .product-day-information .product-day, .products-container__day .product-day-information .product-count {
+        display: inline-block; }
+    .products-container__day .products-list-information, .products-container__day .products-inner-list {
+      display: none; }
+    .products-container__day.open:before {
+      content: '▼';
+      position: absolute;
+      left: 5px; }
+    .products-container__day.open .products-list-information {
+      width: 100%;
+      display: flex; }
+    .products-container__day.open .products-inner-list {
+      display: flex;
+      flex: 0 0 100%;
+      max-width: 100%;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #eeeeee; }
+
+.list-items-block {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  max-width: 100%; }
+  .list-items-block .list-item {
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: space-between; }
+    .list-items-block .list-item .list-item-img {
+      width: 25%; }
+    .list-items-block .list-item .list-item-information {
+      display: flex;
+      flex: 0 0 70%;
+      max-width: 70%;
+      flex-wrap: wrap; }
+      .list-items-block .list-item .list-item-information .list-item-name {
+        width: 100%; }
+      .list-items-block .list-item .list-item-information .list-item-count-price {
+        display: flex;
+        flex: 0 0 100%;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between; }
