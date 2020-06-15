@@ -39,7 +39,9 @@ const template = () => (
         '!./src/templates/macro/**/*'
     ])
         .pipe(data(function() {
-            return require('./js/sql.json')
+            return {
+                items: require('./src/scripts/sql.json')
+            }
         }))
         .pipe(nunjucks.compile())           // компипилируем шаблон
         .pipe(rename({ extname: '.html' })) // переименовываем в html

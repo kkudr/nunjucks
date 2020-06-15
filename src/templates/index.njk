@@ -45,6 +45,19 @@
             </div>
             <div class="products-container__day"></div>
             <div class="products-container__day"></div>
+            
+            {# Пример использования #}
+            {% for item in items %}
+                <div>
+                    <span>Дата</span>
+                    <span>{{ item.date }}</span>
+                    <span>Название</span>
+                    <span>{{ item.name }}</span>
+                    <span>Изображение</span>
+                    <img src="{{ item.image }}">
+                </div>
+            {% endfor %}
+
         </div>
     </div>
 </div>
