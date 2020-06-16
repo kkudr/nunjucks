@@ -30,6 +30,7 @@ sass.compiler       = require('node-sass');
 // удаляет лишние переводы строк в сгенерированных html файлах
 const removeEmptyLines = require('gulp-remove-empty-lines');
 
+const nunjucksData = require('./nunjucksData');
 
 // сборка шаблонов в html файлы
 const template = () => (
@@ -38,11 +39,7 @@ const template = () => (
         '!./src/templates/includes/**/*', // исключаемые пути начинаюся со знака (!)
         '!./src/templates/macro/**/*'
     ])
-        .pipe(data(function() {
-            return {
-                items: require('./src/scripts/sql.json')
-            }
-        }))
+        .pipe(data(nunjucksData))
         .pipe(nunjucks.compile())           // компипилируем шаблон
         .pipe(rename({ extname: '.html' })) // переименовываем в html
         .pipe(prettifyHtml())               // форматируем получившийся html
